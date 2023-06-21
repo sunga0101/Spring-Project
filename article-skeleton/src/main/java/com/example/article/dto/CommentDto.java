@@ -13,6 +13,8 @@ public class CommentDto {
     //정적 팩토리 메소드 패턴
     public static CommentDto fromEntity(CommentEntity entity){
         CommentDto dto = new CommentDto();
+        dto.setId(entity.getId());
+        dto.setArticleId(entity.getArticleId());
         dto.setWriter(entity.getWriter());
         dto.setContent(entity.getContent());
         return dto;
