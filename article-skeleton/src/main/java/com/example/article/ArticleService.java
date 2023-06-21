@@ -1,12 +1,15 @@
 package com.example.article;
 
 import com.example.article.dto.ArticleDto;
+import com.example.article.entity.ArticleEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -14,22 +17,48 @@ public class ArticleService {
     private final ArticleRepository repository;
 
     public ArticleDto createArticle(ArticleDto dto) {
-        throw new ResponseStatusException(HttpStatus.NOT_IMPLEMENTED);
+        ArticleEntity newArticle = new ArticleEntity();
+        newArticle.setTitle(dto.getTitle());
+        newArticle.setContent(dto.getContent());
+        newArticle.setWriter(dto.getWriter());
+        newArticle = this.repository.save(newArticle);
+        return ArticleDto.fromEntity(newArticle);
     }
 
     public ArticleDto readArticle(Long id) {
-        throw new ResponseStatusException(HttpStatus.NOT_IMPLEMENTED);
+        Optional<ArticleEntity> entity = this.repository.findById(id);
+        if (entity.isPresent()) {
+            return ArticleDto.fromEntity(entity.get());
+        }
+        else throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+
     }
 
     public List<ArticleDto> readArticleAll() {
-        throw new ResponseStatusException(HttpStatus.NOT_IMPLEMENTED);
+        List<ArticleDto> articleList = new ArrayList<>();
+        for (ArticleEntity entity: repository.findAll()) {
+            articleList.add(ArticleDto.fromEntity(entity));
+        }
+        return articleList;
     }
 
     public ArticleDto updateArticle(Long id, ArticleDto dto) {
-        throw new ResponseStatusException(HttpStatus.NOT_IMPLEMENTED);
+        Optional<ArticleEntity> entity = this.repository.findById(id);
+        if (entity.isPresent()){
+            ArticleEntity newArticle = entity.get();
+            newArticle.setTitle(dto.getTitle());
+            newArticle.setWriter(dto.getWriter());
+            newArticle.setContent(dto.getContent());
+            this.repository.save(newArticle);
+            return ArticleDto.fromEntity(newArticle);
+        }
+        else throw new ResponseStatusException(HttpStatus.NOT_IMPLEMENTED);
     }
 
     public void deleteArticle(Long id) {
-        throw new ResponseStatusException(HttpStatus.NOT_IMPLEMENTED);
+        if (repository.existsById(id))
+            repository.deleteById(id);
+        else throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+
     }
 }

@@ -18,4 +18,6 @@ public class ArticleDto {
         dto.setContent(entity.getContent());
         return dto;
     }
+
+
 }
