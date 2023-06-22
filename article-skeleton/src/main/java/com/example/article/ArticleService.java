@@ -64,9 +64,11 @@ public class ArticleService {
             repository.deleteById(id);
         else throw new ResponseStatusException(HttpStatus.NOT_FOUND);
     }
+
+
     /*
+    // JPA Query Method 방식 (비추천)
     public List<ArticleDto> readArticlePaged(){
-        // JPA Query Method 방식 (비추천)
         List<ArticleDto> articleDtoList = new ArrayList<>();
         for ( ArticleEntity entity : this.repository.findTop20ByOrderByIdDesc())
         {

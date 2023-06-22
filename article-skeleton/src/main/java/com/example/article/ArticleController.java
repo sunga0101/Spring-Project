@@ -32,6 +32,11 @@ public class ArticleController {
         return service.readArticlePaged(limit,page);
     }
 
+//    @GetMapping
+//    public List<ArticleDto> readArticleAll(){
+//        return service.readArticleAll();
+//    }
+
     // GET /articles/{id}
     @GetMapping("/{id}")
     public ArticleDto read(@PathVariable("id") Long id){
