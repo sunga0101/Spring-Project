@@ -1,6 +1,9 @@
 package com.example.article;
 
+import com.example.article.dto.ArticleDto;
 import com.example.article.entity.ArticleEntity;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
@@ -15,5 +18,6 @@ public interface ArticleRepository extends JpaRepository<ArticleEntity, Long> {
     // id가 81일 때 80~61번의 아이디
     List<ArticleEntity> findTop20ByIdLessThanOrderByIdDesc(Long id);
 
+    Page<ArticleEntity> findAllByTitleContains(String title, Pageable pageable);
 
 }

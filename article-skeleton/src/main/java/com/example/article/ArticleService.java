@@ -90,4 +90,11 @@ public class ArticleService {
         return articleDtoList;
 
     }
+
+    public Page<ArticleDto> search(String query, Integer page){
+
+        Pageable pageable = PageRequest.of(page,20,Sort.by("id").descending());
+        return repository.findAllByTitleContains(query,pageable).map(ArticleDto::fromEntity);
+
+    }
 }
