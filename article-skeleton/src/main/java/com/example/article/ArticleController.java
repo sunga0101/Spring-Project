@@ -1,8 +1,10 @@
 package com.example.article;
 
 import com.example.article.dto.ArticleDto;
+import com.example.article.entity.ArticleEntity;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,9 +24,12 @@ public class ArticleController {
     }
 
     // GET /articles
+    // 사용자가 원하는 갯수만큼, 원하는 페이지시퀀스 보여주기
     @GetMapping
-    public List<ArticleDto> readAll(){
-        return service.readArticleAll();
+    public Page<ArticleDto> readAll(
+            @RequestParam("limit") Integer limit, @RequestParam(value = "page", defaultValue = "0") Integer page){
+
+        return service.readArticlePaged(limit,page);
     }
 
     // GET /articles/{id}
@@ -43,9 +48,11 @@ public class ArticleController {
     // DELETE /articles/{id}
     @DeleteMapping("/{id}")
     public void delete(
-            @PathVariable("id") Long id
-    ) {
-        service.deleteArticle(id);
+            @PathVariable("id") Long id    ) { service.deleteArticle(id);
     }
 
+//    @GetMapping("/page-test")
+//    public Page<ArticleDto> readPageTest(){
+//        return this.service.readArticlePaged();
+//    }
 }
