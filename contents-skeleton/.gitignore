@@ -37,3 +37,4 @@ out/
 .vscode/
 db.sqlite
 media
+/src/main/java/com/example/contents/exceptions/
