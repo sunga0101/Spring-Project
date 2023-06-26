@@ -1,5 +1,6 @@
 package com.example.validation.dto;
 
+import com.example.validation.constraints.annotation.Blacklist;
 import com.example.validation.constraints.annotation.EmailWhitelist;
 import com.example.validation.constraints.annotation.Phone010;
 import jakarta.validation.constraints.*;
@@ -11,6 +12,7 @@ import java.time.LocalDate;
 public class UserDto {
     private Long id;
 
+    @Blacklist(blacklist = {"malware.good","trojan.jjang"}) // 전달해줌
     @NotBlank
     @Size(min = 8, message = "최소 글자 수는 8글자 입니다") // 최소 길이 이상
     private String username; // 이름 비어있지 않도록
