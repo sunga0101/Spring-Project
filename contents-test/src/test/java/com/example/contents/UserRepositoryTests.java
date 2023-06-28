@@ -68,4 +68,9 @@ public class UserRepositoryTests {
         assertTrue(userEntityOptional.isPresent());
         assertEquals(username, userEntityOptional.get().getUsername());
     }
+
+    // 추가 시나리오
+    // username으로 찾기 실패
+    // username으로 존재하는지 확인
+    // id로 userEntity 삭제
 }
