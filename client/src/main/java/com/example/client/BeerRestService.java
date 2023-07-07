@@ -1,5 +1,8 @@
 package com.example.client;
 
+import com.example.client.MessageDto;
+import com.example.client.dto.BeerGetDto;
+import com.example.client.dto.BeerPostDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
