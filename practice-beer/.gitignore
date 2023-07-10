@@ -15,7 +15,6 @@
 # Ignore gradle files
 .gradle/
 build/
-gradle-wrapper.properties
 *.md
 # AWS User-specific
 .idea/**/aws.xml
