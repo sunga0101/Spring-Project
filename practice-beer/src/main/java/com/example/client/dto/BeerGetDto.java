@@ -1,4 +1,4 @@
-package com.practice.beer.dto;
+package com.example.client.dto;
 
 import lombok.Data;
 

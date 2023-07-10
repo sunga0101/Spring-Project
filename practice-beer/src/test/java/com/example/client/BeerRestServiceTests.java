@@ -1,4 +1,4 @@
-package com.practice.beer;
+package com.example.client;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,19 +10,22 @@ public class BeerRestServiceTests {
     private BeerRestService service;
 
     @Test
-    public void testGetBeerObject(){
+    public void testGetBeerObject() {
         service.getBeerObject();
     }
+
     @Test
-    public void testGetBeerEntity(){
+    public void testGetBeerEntity() {
         service.getBeerEntity();
     }
+
     @Test
     public void testPostBeerObject() {
         service.postBeerObject();
     }
+
     @Test
-    public void testPostBeerEntity204() {
-        service.postBeerEntity204();
+    public void testExchange() {
+        service.exchange();
     }
 }

@@ -1,10 +1,10 @@
-package com.practice.beer;
+package com.example.client;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BeerApplicationTests {
+class ClientApplicationTests {
 
 	@Test
 	void contextLoads() {
