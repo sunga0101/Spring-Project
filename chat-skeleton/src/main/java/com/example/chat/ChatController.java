@@ -15,6 +15,19 @@ import java.io.IOException;
 @RequestMapping("chat")
 @RequiredArgsConstructor
 public class ChatController {
+    private final SimpleChatHandler simpleChatHandler;
+    private final Gson gson;
+
+    @GetMapping("test")
+    public @ResponseBody String test() throws IOException {
+        simpleChatHandler.broadcast(gson.toJson(
+                new ChatMessage(
+                        "admin", "!! 10분 뒤 서버 종료됨"
+                )
+        ));
+        return "done";
+
+    }
 
     @GetMapping("rooms")
     public String rooms() {
