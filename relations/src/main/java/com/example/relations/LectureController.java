@@ -23,7 +23,7 @@ public class LectureController {
     // 강의에 강사를 배정한다
     @PutMapping("{id}/instructor/{instructorId}")
     // 응답 바디가 없을 것이다.
-    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
     public void updateLectureInstructor(
             @PathVariable("id") Long id,
             @PathVariable("instructorId") Long instructorID
