@@ -15,6 +15,8 @@ public class StudentEntity {
     private String lastName;
 
     @ManyToMany
+    @JoinTable(name = "student_attending_lecture")
+    // 생성되는 조인 테이블 이름 변경할 수 있음
     private List<LectureEntity> attending;
 
 }
