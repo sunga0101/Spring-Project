@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.sql.Time;
+import java.util.List;
 
 @Data
 @Entity
@@ -21,4 +22,8 @@ public class LectureEntity {
     @ManyToOne // 수업 여러 개에 강의자 한명
     @JoinColumn(name = "instructor") // instructor라는 이름으로  join컬럼 만듦
     private InstructorEntity instructor; // 기본은 insturctor_id
+
+    // 이 수업을 듣는 학생들을 알아보고 싶다
+    @ManyToMany(mappedBy = "attending")
+    private List<StudentEntity> student;
 }
