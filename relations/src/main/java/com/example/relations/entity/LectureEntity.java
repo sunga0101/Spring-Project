@@ -19,5 +19,6 @@ public class LectureEntity {
     private Integer endTime;
 
     @ManyToOne // 수업 여러 개에 강의자 한명
-    private InstructorEntity instructor;
+    @JoinColumn(name = "instructor") // instructor라는 이름으로  join컬럼 만듦
+    private InstructorEntity instructor; // 기본은 insturctor_id
 }
