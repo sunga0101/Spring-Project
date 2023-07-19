@@ -26,3 +26,32 @@ FROM student INNER JOIN enrolling_lectures
 SELECT *
 FROM lecture JOIN instructor
                   ON lecture.instructor_id = instructor.id;
+
+-- OUTER JOIN
+SELECT *
+FROM instructor LEFT OUTER JOIN student
+                                ON instructor.id = student.advisor_id;
+
+SELECT *
+FROM instructor LEFT OUTER JOIN lecture
+                                ON instructor.id = lecture.instructor_id;
+
+SELECT *
+FROM lecture RIGHT OUTER JOIN instructor
+ON lecture.instructor_id = instructor.id;
+
+SELECT *
+FROM student FULL OUTER JOIN instructor
+ON student.advisor_id = instructor.id;
+
+SELECT *
+FROM instructor LEFT JOIN lecture
+                          ON instructor.id = lecture.instructor_id;
+
+SELECT *
+FROM lecture RIGHT JOIN instructor
+ON lecture.instructor_id = instructor.id;
+
+SELECT *
+FROM student FULL JOIN instructor
+ON student.advisor_id = instructor.id;
