@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="34ce152f-aadb-46d1-8bae-3735a2f00630" name="Changes" comment="build: 프로젝트 빌드">
+      <change afterPath="$PROJECT_DIR$/../security-practice/src/main/java/com/example/securitypractice/RootController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../security-practice/src/main/java/com/example/securitypractice/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../security-practice/src/main/java/com/example/securitypractice/config/WebSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../security-practice/src/main/java/com/example/securitypractice/entity/CustomUserDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../security-practice/src/main/java/com/example/securitypractice/entity/UserEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../security-practice/src/main/java/com/example/securitypractice/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../security-practice/src/main/java/com/example/securitypractice/service/JpaUserDetailsManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../security-practice/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../security-practice/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../security-practice/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../security-practice/src/main/resources/application.yaml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2SsDhtBURUz5LMMkPEv6TaGpeH8" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/sungabaek/Desktop/멋사/SpringProject/calculator/build.gradle",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="JUnit.CalculatorTests.divisionTest">
+    <configuration name="CalculatorTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="calculator.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.calculator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.calculator" />
+      <option name="MAIN_CLASS_NAME" value="com.example.calculator.CalculatorTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CalculatorTests.additionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="calculator.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.calculator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.calculator" />
+      <option name="MAIN_CLASS_NAME" value="com.example.calculator.CalculatorTests" />
+      <option name="METHOD_NAME" value="additionTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CalculatorTests.divisionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="calculator.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.calculator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.calculator" />
+      <option name="MAIN_CLASS_NAME" value="com.example.calculator.CalculatorTests" />
+      <option name="METHOD_NAME" value="divisionTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CalculatorApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="calculator.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.calculator.CalculatorApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CalculatorTests.divisionTest" />
+        <item itemvalue="JUnit.CalculatorTests.additionTest" />
+        <item itemvalue="JUnit.CalculatorTests" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="34ce152f-aadb-46d1-8bae-3735a2f00630" name="Changes" comment="" />
+      <created>1689926517175</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1689926517175</updated>
+      <workItem from="1689926518326" duration="1935000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
