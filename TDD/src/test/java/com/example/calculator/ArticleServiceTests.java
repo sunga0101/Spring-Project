@@ -40,4 +40,6 @@ public class ArticleServiceTests {
         assertEquals(1, articleDtoList.size());
         assertTrue(articleDtoList.get(0).getTitle().contains(query));
     }
+
+
 }
