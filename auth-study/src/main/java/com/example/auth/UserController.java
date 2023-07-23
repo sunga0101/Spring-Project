@@ -1,6 +1,7 @@
 package com.example.auth;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.UserDetailsManager;
@@ -31,7 +32,8 @@ public class UserController {
     }
 
     @GetMapping("/my-profile")
-    public String myProfile() {
+    public String myProfile(Authentication authentication) {
+        log.info(authentication.getName());
         return "my-profile"; // 마이페이지
     }
 
