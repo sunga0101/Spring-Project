@@ -11,4 +11,4 @@ spring:
     database-platform: org.hibernate.community.dialect.SQLiteDialect
     show-sql: true
 jwt:
-  secret: adfadfepfkvdvakdsnfdfiqpfhdvnadfkqoejgdfadlfkjadofjaowigvnvnalsdjfrfqwfi
+  secret: aaaabbbsdifqbvaesoioegwaaaabbbsdifqbvaesoioegwaaaabbbsdifqbvaes
