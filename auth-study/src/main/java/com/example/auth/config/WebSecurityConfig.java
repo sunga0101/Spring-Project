@@ -35,7 +35,11 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests(
                         auth -> auth
                     .requestMatchers("/no-auth").permitAll() // 해당 URL 모든 요청 인증 필요 무 (바로 접근 가능)
-                    .requestMatchers("users/my-profile").authenticated() // 권한 필요
+                    .requestMatchers("users/my-profile",
+                                     "/users/logout"
+                    ).authenticated() // 권한 필요
+                    .requestMatchers("/users/register") // 회원가입 경로
+                    .anonymous() // 권한이 없어야만 함 (로그아웃 상태)
                 )
                 // form 을 이용한 로그인 관련 설정
                 .formLogin(
@@ -53,9 +57,9 @@ public class WebSecurityConfig {
                 .logout(
                         logout -> logout
                                 // 로그아웃 요청을 보낼 URL
-                                .logoutUrl("users/logout") // 클라이언트 UI가 /users/logout으로 POST 요청 보내도록 함
+                                .logoutUrl("/users/logout") // 클라이언트 UI가 /users/logout으로 POST 요청 보내도록 함
                                 // 로그아웃 성공시 이동할 URL 설정
-                                .logoutSuccessUrl("users/login")
+                                .logoutSuccessUrl("/users/login")
                 )
 
         ;
