@@ -1,5 +1,6 @@
 package com.example.auth;
 
+import com.example.auth.entity.CustomUserDetails;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.User;
@@ -34,6 +35,8 @@ public class UserController {
     @GetMapping("/my-profile")
     public String myProfile(Authentication authentication) {
         log.info(authentication.getName());
+        log.info(((CustomUserDetails)
+                authentication.getPrincipal()).getEmail());
         return "my-profile"; // 마이페이지
     }
 
@@ -52,7 +55,11 @@ public class UserController {
             {
                 // 회원가입 진행
                 userDetailsManager.createUser
-                        (User.withUsername(username)
+//                        (User.withUsername(username)
+                // 새로운 UserDetails 구현체를 저장하고 있기 때문에
+                // UserDetailsManager 로 전달하는 UserDetails 도 바꿈
+                            (CustomUserDetails.builder()
+                                .username(username)
                                 .password(passwordEncoder
                                 .encode(password))
                                 .build());
