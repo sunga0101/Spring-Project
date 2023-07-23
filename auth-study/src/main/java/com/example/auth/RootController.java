@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class RootController {
-    @GetMapping("")
+    @GetMapping
     public String root(){
         return "hello"; // 로그인 한 사용자만 볼 수 있는 페이지
     }

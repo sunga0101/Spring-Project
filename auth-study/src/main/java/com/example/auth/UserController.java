@@ -13,8 +13,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Slf4j
-//@Controller  // 로그인 페이지를 보여줄려고
-//@RequestMapping("/users")
+@Controller  // 로그인 페이지를 보여줄려고
+@RequestMapping("/users")
 public class UserController {
+    @GetMapping("/login")
+    public String loginForm() {
+        return "login-form"; // 로그인폼
+    }
+
+    @GetMapping("/my-profile")
+    public String myProfile(){
+        return "my-profile"; // 마이페이지
+    }
+
 
 }
