@@ -35,3 +35,25 @@ const name = 'Jeeho'
 const message = `Hello, ${name}!!!
 Welcome to JavaScript`
 console.log(message)
+
+// Object
+// JSON 의 Object 를 부르는 말과 동일하다.
+const person = {
+    firstName: 'Jeeho',
+    lastName: 'Park',
+    'phone number': '010-1234-5678',
+}
+// 객체의 요소에 접근할때는 `.` 또는 `[]` 를 사용한다.
+console.log(person.firstName)
+
+console.log(person.lastName)
+console.log(person['lastName'])
+console.log(person['phone number'])
+
+// Array
+// 순서가 보장되는 배열
+// 각 요소를 `,` 기준으로 분리해서 정의
+const numbers = [1, 2, 3, 4, 5]
+console.log(numbers[0])
+console.log(numbers[2])
+console.log(numbers[numbers.length - 1])
