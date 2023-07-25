@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="beer-container">
+    <p>Brand: <span id="beer-brand"></span></p>
+    <p>Name: <span id="beer-name"></span></p>
+    <p>Style: <span id="beer-style"></span></p>
+    <p>Alcohol: <span id="beer-alcohol"></span></p>
+</div>
+<button id="beer-button">Set Beer</button>
+
+  <script>
+      // 1. 정보 입력할 요소 가져오기
+      const beerBrand = document.getElementById('beer-brand')
+      const beerName = document.getElementById('beer-name')
+      const beerStyle = document.getElementById('beer-style')
+      const beerAlcohol = document.getElementById('beer-alcohol')
+
+      // 2. 버튼에 클릭 이벤트 리스너 붙이기
+      document.getElementById('beer-button').addEventListener('click',function () {
+          console.log('clicked!')
+
+          // 3. 클릭이 발생했으면 HTTP 요청 보내기
+          fetch('https://random-data-api.com/api/v2/beers')
+              .then((response)=> {
+                  console.log(response.status)
+                  console.log(response.statusText)
+                  // 데이터를 json으로 확인해보자
+                  return response.json()
+              })
+              .then((body)=> {
+                  console.log(body)
+                  // 4. 정보를 바탕으로 갱신
+                  beerBrand.innerText = body.brand
+                  beerName.innerText = body.name
+                  beerAlcohol.innerText = body.alcohol
+                  beerStyle.innerText = body.style
+              })
+      })
+
+
+    // HTTP 요청을 보내고 싶은 URL
+    // 기본 Request Method 는 GET
+    fetch('https://random-data-api.com/api/v2/beers')
+            .then((response)=> {
+              console.log(response.status)
+              console.log(response.statusText)
+              // 데이터를 json으로 확인해보자
+              return response.json()
+            })
+            .then((body)=> {
+              console.log(body)
+            })
+
+  </script>
+<!--<script>-->
+<!--    fetch("/api/geocoding", {-->
+<!--        method: "post",-->
+<!--        headers: {-->
+<!--            "content-type": "application/json"-->
+<!--        },-->
+<!--        body: JSON.stringify({-->
+<!--            lat, lng-->
+<!--        })-->
+<!--    }).then(response => {-->
+<!--        if (response.ok) response.json()-->
+<!--            .then(body => {-->
+<!--                alert(body.address)-->
+<!--            })-->
+<!--    })-->
+<!--</script>-->
+</body>
+</html>

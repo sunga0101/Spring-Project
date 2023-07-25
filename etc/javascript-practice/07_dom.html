@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header></header>
+    <div id="container">
+<!--  document.getElementById('container')   아이디를 기준으로 가져옴 -->
+        <div class="container-item">
+            <!--       document.getElementById('alex-name')-->
+            <!-- 동일 : document.querySelector('#alex-name')-->
+            <h3 id="alex-name">Alex</h3>
+            <p>alex@gmail.com</p>
+        </div>
+        <div class="container-item">
+            <h3>Brad</h3>
+            <p>brad@gmail.com</p>
+        </div>
+    </div>
+
+    <script>
+        const windowPrompt = function() {
+            const todoDesc = window.prompt('새로운 할일')
+            const todoExpire = window.prompt('언제까지')
+            window.alert(`새로운 할일: ${todoDesc}, ${todoExpire} 까지`)
+        }
+
+        document.querySelector('#alex-name').innerText='my name is'
+
+        setTimeout(()=> {
+            const headerElem = document.querySelector('header')
+            headerElem.innerText = 'JS Generated Header'
+        }, 1000)
+
+        // alex, brad 외에 다른 객체를 만들고 싶다면?
+        const newHeading = document.createElement('h1') // 트리에 아직 삽입되지 않은 노드 제작
+        newHeading.innerText = 'JS Genrated Heading'
+        headerElem.appendChild(newHeading)
+
+        // 1. 새로운 div 요소를 만든다
+        const newContactElem = document.createElement('div')
+        // 2. div에 추가할 새로운 h3 요소를 만들고 내용을 채운다.
+        const newContactName = document.createElement('h3')
+        newContactElem.innerText = 'Chad'
+        // 3. div에 추가할 새로운 p 요소를 만들고 내용을 채운다
+        const newContactEmail = document.createElement('p')
+        newContactEmail.innerText = 'chad@gmail.com'
+        // 4. 새로 만든 dic의 자식으로 name과 email을 추가하고,
+        newContactElem.appendChild(newContactName)
+        newContactElem.appendChild(newContactEmail)
+        // 5. 새 div를 본래 존재한 div의 자식으로 추가한다
+        document.getElementById('container').appendChild(newContactElem)
+
+        const containerItems = documents.querySelectorAll('.container-item')
+        const target = containerItems[0]
+        document.getElementById('container').removeChild(target)
+        document.getElementById('container').firstChild
+
+
+    </script>
+</body>
+</html>
