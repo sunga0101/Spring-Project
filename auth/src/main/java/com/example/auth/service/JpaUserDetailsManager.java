@@ -30,7 +30,7 @@ public class JpaUserDetailsManager implements UserDetailsManager {
 //                .password(passwordEncoder.encode("asdf"))
 //                .build());
         createUser(CustomUserDetails.builder()
-                .username("user")
+                .username("user") 
                 .password(passwordEncoder.encode("asdf"))
                 .email("user@gmail.com")
                 .build());
